@@ -7,3 +7,5 @@ const obj = {
         console.log(this.a); // 10
     }
 }
+
+obj.x()
