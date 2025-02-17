@@ -1,25 +1,19 @@
-function debounce(func) {
-  let timer = 0;
+function debounce(func,delay=2000) {
+  let timer = 0
   return function () {
-    console.log(timer)
-
-    if (timer < Date.now()) {
-      func();
-      timer = Date.now()+5000
-      return;
-    } else {
-      return;
-    }
+    clearTimeout(timer)
+    timer = setTimeout(()=> {
+        func()
+    },delay)
+    
   };
 }
-
 
 function testing() {
   console.log("booop");
 }
 
-
-
 let debouncedFunction = debounce(testing);
-debouncedFunction()
-setInterval(debouncedFunction,1000)
+debouncedFunction();
+
+
