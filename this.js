@@ -9,3 +9,5 @@ const obj = {
 }
 
 obj.x()
+
+// new line
